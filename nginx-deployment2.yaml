@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nignx-deploy
+  labels:
+    k8s-app: nginx-demo
+spec:
+  replicas: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1 #升级过程中最多可以比原先设置多出的POD数量
+      maxUnavailable: 1 #升级过程中最多有多少个POD处于无法提供服务的状态
+  minReadySeconds: 5 #在等待设置的时间后才进行升级
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-demo
+        image: nginx
+        ports:
+          - containerPort: 80

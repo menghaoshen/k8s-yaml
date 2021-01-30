@@ -1,0 +1,16 @@
+# 一次性的任务
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi
+spec:
+  completions: 10 #运行10次
+  parallelism: 2  #每次2个
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: perl
+        command: ["perl","-Mbignum=bpi","-wle","print bpi(2000)"]
+      restartPolicy: Never
+  backoffLimit: 4

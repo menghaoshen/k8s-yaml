@@ -1,0 +1,27 @@
+#偏好要求
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:                                      # 使用node亲和进行判断
+      requiredDuringSchedulingIgnoredDuringExecution:  # 硬策略
+            nodeSelectorTerms:                         # 节点选择器的条件
+            - matchExpressions:                        # 定义匹配的表达式
+              - key: app                               # label 的key
+                operator: In                           # 定义判断的方式有多种 ，In NotIn,Exists,DoesNotexist,Gt,Lt.
+                values:                                # labe 的values
+                - nginx1
+                - nginx2
+      preferredDuringSchedulingIgnoredDuringExecution:  # 这就是偏好的要求了
+        - weight: 1 # 设置权重，分数越高，优先级越高
+          preference:
+            matchExpressions:                        # 定义匹配的表达式
+            - key: disktype                               # label 的key
+              operator: In                           # 定义判断的方式有多种 ，In NotIn,Exists,DoesNotexist,Gt,Lt.
+              values:                                # labe 的values
+              - ssd
+  containers:
+  - name: with-node-affinity
+    image: registry.aliyuncs.com/google_containers/pause:3.2
