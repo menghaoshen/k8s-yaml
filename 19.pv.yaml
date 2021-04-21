@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: test
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce  #访问模式
+  hostPath:
+    path: "/storage/pv1"

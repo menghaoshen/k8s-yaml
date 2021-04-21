@@ -1,0 +1,37 @@
+# nignx和redis在一个节点上面
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server
+spec:
+  selector:
+    matchLabels:
+      app: web-server
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec:
+      affinity:
+        podAntiAffinity:           #反亲和 ，多个副本分布在不同的节点上面
+          requiredDuringSchedulingIgnoredDuringExecution:  
+          - labelSelector:
+              matchExpressions:                    
+              - key: app                              
+                operator: In                           
+                values:                              
+                - web-server
+            topologyKey: "kubernetes.io/hostname"  #拓扑域，用来判断拥有哪些标签的节点时同一个位置
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:                    
+              - key: app                              
+                operator: In                           
+                values:
+                - store
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: web-app
+        image: nginx
