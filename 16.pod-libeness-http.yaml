@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -19,4 +20,27 @@ spec:
         - name: X-custom-Header
           value: Awesome
       initialDelaySeconds: 3
+=======
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-http
+spec:
+  containers:
+  - name: liveness
+    image: carlziess/liveness
+    imagePullPolicy: IfNotPresent
+    args:
+    - /server
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+        httpHeaders:
+        - name: X-custom-Header
+          value: Awesome
+      initialDelaySeconds: 3
+>>>>>>> 第一次添加
       periodSeconds: 3

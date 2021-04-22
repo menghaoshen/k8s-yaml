@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -16,4 +17,24 @@ spec:
     spec:
       containers:
       - name: nginx
+=======
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  labels:
+    app: rs-nginx
+spec:
+  replicas: 3
+  selector:   #select 控制pod 
+    matchLabels:
+      app: pod-nginx
+  template: # 模板
+    metadata:
+      labels:
+        app: pod-nginx
+    spec:
+      containers:
+      - name: nginx
+>>>>>>> 第一次添加
         image: nginx

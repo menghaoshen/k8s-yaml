@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
@@ -17,3 +18,24 @@ spec:
         backend:
           serviceName: test2
           servicePort: 18080
+=======
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-test
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: foo.bar.com
+    http:
+      paths:
+      - path: /foo
+        backend:
+          serviceName: test
+          servicePort: 18080
+      - path: /bar
+        backend:
+          serviceName: test2
+          servicePort: 18080
+>>>>>>> 第一次添加

@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: test-config
 data:
   username: demon
+=======
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-config
+data:
+  username: demon
+>>>>>>> 第一次添加
   password: redhat

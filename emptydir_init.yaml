@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind:  Pod
 metadata:
@@ -22,4 +23,30 @@ spec:
       volumeMounts:
         - name: storage
           mountPath: /storage
+=======
+apiVersion: v1
+kind:  Pod
+metadata:
+  name: emptydir-pod
+  labels:
+    app: myapp
+spec:
+  volumes:
+  - name: storage
+    emptyDir: {}
+  containers:
+    - name: myapp1
+      image: radial/busyboxplus
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: storage
+        mountPath: /stoage
+      command: ['sh','-c','sleep 3600000']
+  initContainers:
+    - name: myapp2
+      image: busybox:1.28
+      volumeMounts:
+        - name: storage
+          mountPath: /storage
+>>>>>>> 第一次添加
       command: ['sh','-c','touch /storage/test && sleep 10']

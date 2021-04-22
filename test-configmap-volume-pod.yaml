@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,4 +14,21 @@ spec:
       imagePullPolicy: IfNotPresent
       volumeMounts:
       - mountPath: config-volume
+=======
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-configmap-volume-pod
+spec:
+  volumes:
+    - name:   config-volume
+      configMap:
+        name: web-config
+  containers:
+    - name: test-containers
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - mountPath: config-volume
+>>>>>>> 第一次添加
         name:  config-volume

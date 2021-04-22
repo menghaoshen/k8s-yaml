@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,3 +7,13 @@ metadata:
 spec:
   type: ExternalName
   externaLname: www.baiduc.com
+=======
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  # namespace: prod #没有这个namespace，先注释
+spec:
+  type: ExternalName
+  externalName: www.baidu.com
+>>>>>>> 第一次添加

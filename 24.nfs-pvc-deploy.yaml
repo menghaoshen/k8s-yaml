@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -40,4 +41,48 @@ spec:
   - port: 80
     targetPort: web
     selector:
+=======
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-pvc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nfs-pvc
+  template:
+    metadata:   
+      labels:
+        app: nfs-pvc
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: www
+        persistentVolumeClaim:
+          claimName: pvc2-nfs
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nfs-pvc
+  labels:
+    app: nfs-pvc
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: web
+    selector:
+>>>>>>> 第一次添加
       app: nfs-pvc

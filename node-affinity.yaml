@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -14,4 +15,22 @@ spec:
                 - nginx1
     containers:
     - name: with-node-affinity
+=======
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:                                      # 使用node亲和进行判断
+      requiredDuringSchedulingIgnoredDuringExecution:  # 硬策略
+            nodeSelectorTerms:                         # 节点选择器的条件
+            - matchExpressions:                        # 定义匹配的表达式
+              - key: app                               # label 的key
+                operator: In                           # 定义判断的方式有多种 ，In NotIn,Exists,DoesNotexist,Gt,Lt.
+                values:                                # labe 的values
+                - nginx1
+    containers:
+    - name: with-node-affinity
+>>>>>>> 第一次添加
       image: registry.aliyuncs.com/google_containers/pause:3.2

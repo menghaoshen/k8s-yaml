@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -20,3 +21,27 @@ spec:
         ports:
         - containerPort: 80
           name: web
+=======
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  serviceName:  "nginx" #无头service
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: nginx:1.7.6
+        ports:
+        - containerPort: 80
+          name: web
+>>>>>>> 第一次添加

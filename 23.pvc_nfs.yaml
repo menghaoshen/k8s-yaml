@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -7,4 +8,15 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
+=======
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-nfs
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+>>>>>>> 第一次添加
       storage: 1Gi

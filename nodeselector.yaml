@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -10,4 +11,18 @@ spec:
     image: nginx
     imagePullPolicy: IfNotPresent
   nodeSelector:
+=======
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+>>>>>>> 第一次添加
     diskytpe: ssd

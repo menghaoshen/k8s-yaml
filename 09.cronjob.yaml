@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
@@ -15,4 +16,23 @@ spce:
             - /bin/sh
             - -c
             - date; echo hello for the Kubernetes cluster
+=======
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spce:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo hello for the Kubernetes cluster
+>>>>>>> 第一次添加
           restartPolicy: OnFailure

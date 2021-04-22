@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -18,4 +19,26 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: test-config
+=======
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-configmap-commadn-env-pod
+spec:
+  containers:
+    - name: test-container
+      image: radial/busyboxplus
+      imagePullPolicy: IfNotPresent
+      command: ['/bin/sh','-c','echo $(mysqluser) $(mysqlpasswd);sleep 10000']
+      env:
+        - name:  mysqluser
+          valueFrom:
+            configMapKeyRef:
+              name: test-config
+              key: username
+        - name: mysqlpasswd
+          valueFrom:
+            configMapKeyRef:
+              name: test-config
+>>>>>>> 第一次添加
               key: password
