@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: nginx.test.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+      - backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+        path: /test
+        pathType: ImplementationSpecific
+  - host: nginx.gray.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
