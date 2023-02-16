@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -11,4 +14,23 @@ spec:
   accessModes:
     - ReadWriteOnce  #访问模式
   hostPath:
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: test
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce  #访问模式
+  hostPath:
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
     path: "/storage/pv1"

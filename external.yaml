@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: nginx-pod
+  ports:
+  - name: http
+    protocol: TCP
+    port: 18080
+    targetPort: 80
+  externalIPs:
+    - 192.168.1.25
+=======
+>>>>>>> ORIG_HEAD
 apiVersion: v1
 kind: Service
 metadata:
@@ -12,3 +31,7 @@ spec:
     targetPort: 80
   externalIPs:
     - 192.168.234.130 
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD

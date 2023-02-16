@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -8,4 +11,20 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
+=======
+>>>>>>> ORIG_HEAD
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: test
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
       storage: 3Gi

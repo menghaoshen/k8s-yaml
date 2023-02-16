@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -10,4 +13,22 @@ spec:
       command: ['/bin/sh','-c','sleep 100000']
       envFrom:
       - configMapRef:
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-configmap-env-pod
+spec:
+  containers:
+    - name: test-container
+      image: radial/busyboxplus
+      imagePullPolicy: IfNotPresent
+      command: ['/bin/sh','-c','sleep 100000']
+      envFrom:
+      - configMapRef:
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
           name: test-config

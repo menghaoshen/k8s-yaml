@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -12,4 +15,24 @@ spec:
       ports:
         - name: web
           containerPort: 80
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-web
+  labels: 
+    role: myrole
+spec:
+  containers:
+    - name: web
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+        - name: web
+          containerPort: 80
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
           protocol: TCP

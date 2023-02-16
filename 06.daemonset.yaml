@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -15,4 +18,27 @@ spec:
     spec:
       containers:
       - name: fluentd-elasticsearch
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd-elasticsearch
+  labels:
+    k8s-app: fluentd-logging
+spec:
+  selector:
+    matchLabels:
+      name: fluentd-elasticsearch
+  template:
+    metadata:
+      labels:
+        name: fluentd-elasticsearch
+    spec:
+      containers:
+      - name: fluentd-elasticsearch
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
         image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2

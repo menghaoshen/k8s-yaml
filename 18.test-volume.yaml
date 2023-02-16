@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,4 +16,25 @@ spec:
     name: test-container
     volumeMounts:
     - mountPath: /test-pd
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+spec:
+  volumes:
+  - name: test-volume
+    hostPath:
+      path: /data
+  containers:
+  - image: nginx
+    imagePullPolicy: IfNotPresent
+    name: test-container
+    volumeMounts:
+    - mountPath: /test-pd
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
       name:  test-volume

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -15,4 +18,27 @@ spec:
                 - ssd
   containers:
   - name: with-node-affinity
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:                                      # 使用node亲和进行判断
+      preferredDuringSchedulingIgnoredDuringExecution:  #软策略
+      - weight: 1 # 设置权重，分数越高，优先级越高
+        preference:
+          matchExpressions:                        # 定义匹配的表达式
+          - key: disktype                               # label 的key
+            operator: In                           # 定义判断的方式有多种 ，In NotIn,Exists,DoesNotexist,Gt,Lt.
+            values:                                # labe 的values
+                - ssd
+  containers:
+  - name: with-node-affinity
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
     image: registry.aliyuncs.com/google_containers/pause:3.2

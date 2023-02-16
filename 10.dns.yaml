@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -12,4 +15,24 @@ spec:
       command:
         - sleep
         - "3600"
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox1
+  labels:
+    name: busybox1
+spec:
+  hostname: busybox-1
+  subdomain:  default-subdomain
+  containers:
+    - image: busybox:1.28 
+      command:
+        - sleep
+        - "3600"
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
       name: busyboxy

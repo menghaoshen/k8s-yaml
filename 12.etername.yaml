@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  # namespace: prod #没有这个namespace，先注释
+spec:
+  type: ExternalName
+  externaLname: www.baiduc.com
+=======
+>>>>>>> ORIG_HEAD
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,3 +19,7 @@ metadata:
 spec:
   type: ExternalName
   externalName: www.baidu.com
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD

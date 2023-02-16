@@ -1,3 +1,44 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  serviceName: "nginx"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+          - containerPort: 80
+            name: web
+=======
+>>>>>>> ORIG_HEAD
 apiVersion: v1
 kind: Service
 metadata:
@@ -34,3 +75,7 @@ spec:
         ports:
           - containerPort: 80
             name: web
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD

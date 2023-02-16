@@ -1,7 +1,22 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: test-config
 data:
   username: demon
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-config
+data:
+  username: demon
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
   password: redhat

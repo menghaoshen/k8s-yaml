@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -10,4 +13,22 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   nfs:
     path: /data/k8s
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs_pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    path: /data/k8s
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
     server: 192.168.152.146

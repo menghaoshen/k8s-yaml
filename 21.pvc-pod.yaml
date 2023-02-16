@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -16,4 +19,28 @@ spec:
           name: "http-server"
       volumeMounts:
       - mountPath: "/usr/share/nginx/html"
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod
+spec:
+  volumes:
+    - name: task-pv-storage
+      persistentVolumeClaim:
+        claimName: task-pv-claim
+  containers:
+    - name: task-pv-containers
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+      - mountPath: "/usr/share/nginx/html"
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
         name:  task-pv-storage

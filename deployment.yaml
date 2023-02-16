@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,4 +23,32 @@ spec:
         - name: flaskapp-demo
           image: jcdemo/flaskapp
           ports:
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube100-site
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: nginx-demo
+          image: nginx
+          ports:
+            - containerPort: 80
+        - name: flaskapp-demo
+          image: jcdemo/flaskapp
+          ports:
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
             - containerPort: 5000

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 apiVersion: v1
 kind:  Pod
 metadata:
@@ -22,4 +25,34 @@ spec:
       volumeMounts:
       - name: storage
         mountPath: /stoage
+=======
+>>>>>>> ORIG_HEAD
+apiVersion: v1
+kind:  Pod
+metadata:
+  name: emptydir-pod
+  labels:
+    app: myapp
+spec:
+  volumes:
+  - name: storage
+    emptyDir: {}
+  containers:
+    - name: myapp1
+      image: radial/busyboxplus
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: storage
+        mountPath: /stoage
+      command: ['sh','-c','sleep 3600000']
+    - name: myapp2
+      image: radial/busyboxplus
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: storage
+        mountPath: /stoage
+<<<<<<< HEAD
+=======
+>>>>>>> 第一次添加
+>>>>>>> ORIG_HEAD
       command: ['sh','-c','sleep 3600000']
