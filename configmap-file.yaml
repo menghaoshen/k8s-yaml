@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dp-cm
+  name: dp-cm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dp-cm
+  template:
+    metadata:
+      labels:
+        app: dp-cm
+    spec:
+      containers:
+      - image: nginx:1.9.2 
+        name: nginx
+        volumeMounts:
+          - name: nginx-conf
+            mountPath: /usr/share/nginx/html/index.html
+            subPath: index.html #只挂载这个一个文件，目录下面的其他文件不会动
+         # - name: nginx-conf 
+         #   mountPath: /etc/html
+      volumes:
+       # - name: redisconf
+       #   configMap: 
+       #     name: redis 
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+            - key: index.html
+              path: index.html
+              mode: 0777 #优先级搞
+            defaultMode: 0666 
